@@ -1,0 +1,92 @@
+body{
+  padding: 20px;
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+}
+
+#box3d{
+  display: inline-block;
+  transition: all 1s;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+#cube{
+  height: 400px;
+  width: 400px;
+  position: relative;
+  margin: 200px auto;
+  transition:  all 1s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 2500px;
+  transform: rotateY(20deg) rotateX(-20deg) rotateZ(10deg);   
+}
+
+#cube div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition:  all 1s ease-in-out;
+  opacity: 0.8;
+  border: 1px solid #888;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+#face1{
+  background-color: green;
+  background-image: url('meme1.jpg');
+  background-size: cover;
+}
+
+#face2{
+  background-color: pink;
+   background-image: url('meme2.jpg');
+  background-size: cover;
+  transform: rotateY(90deg) translateX(-200px) translateZ(200px); 
+}
+
+#face3{
+  background-color: yellow;
+   background-image: url('meme3.jpg');
+  background-size: cover;
+  transform: rotateY(-90deg) translateX(200px) translateZ(200px);
+}
+
+#face4{
+  background-color: purple;
+   background-image: url('meme4.jpg');
+  background-size: cover;
+  transform: rotateX(90deg) translateY(200px) translateZ(200px);
+}
+
+#face5{
+  background-color: maroon;
+   background-image: url('meme5.jpg');
+  background-size: cover;
+  transform: rotateX(-90deg) translateY(-200px) translateZ(200px);
+}
+
+#face6{
+  background-color: blue;
+   background-image: url('meme6.jpg');
+  background-size: cover;
+  transform: rotateY(0deg) translateX(0px) translateZ(400px);
+}
+
+#radio-back:checked ~ #box3d #cube {
+  transform: rotateY(180deg);
+} 
+#radio-left:checked ~ #box3d #cube {
+  transform: rotateY(90deg);
+} 
+#radio-right:checked ~ #box3d #cube {
+  transform: rotateY(-90deg);
+}
+#radio-top:checked ~ #box3d #cube {
+  transform: rotateX(-90deg);
+}  
+#radio-bottom:checked ~ #box3d #cube {
+  transform: rotateX(90deg);
+}
